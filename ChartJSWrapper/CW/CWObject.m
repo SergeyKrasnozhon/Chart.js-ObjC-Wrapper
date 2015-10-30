@@ -56,26 +56,8 @@
 		}
 		ret = jsonProp;
 	} else if([val isKindOfClass:[CWColor class]]) {
-		CWColor* _c = val;
-#if TARGET_OS_IPHONE
-		CGFloat fr;
-		CGFloat fg;
-		CGFloat fb;
-		CGFloat fa;
-		[_c getRed:&fr green:&fg blue:&fb alpha:&fa];
-		int r = (fr*255.0f);
-		int g = (fg*255.0f);
-		int b = (fb*255.0f);
-		CGFloat a = fa;
-#else
-		CWColor* c = [_c colorUsingColorSpace:[NSColorSpace sRGBColorSpace]];
-		int r = (c.redComponent*255.0f);
-		int g = (c.greenComponent*255.0f);
-		int b = (c.blueComponent*255.0f);
-		CGFloat a = (c.alphaComponent);
-#endif
-		NSString* jsonColor = [NSString stringWithFormat:@"rgba(%d,%d,%d,%f)",r,g,b,a];
-		ret = jsonColor;
+        CWColor *_c = val;
+        ret = [_c toJsonColor];
 	} else {
 		ret = val;
 	}

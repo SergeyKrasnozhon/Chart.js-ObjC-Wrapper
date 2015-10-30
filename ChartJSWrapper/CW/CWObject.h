@@ -7,6 +7,7 @@
 //
 
 #import "CWTypes.h"
+#import "CWColor+Parser.h"
 
 @interface CWObject : NSObject
 - (id) convertToJSON:(id)val;
