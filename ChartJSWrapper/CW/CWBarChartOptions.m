@@ -9,6 +9,7 @@
 #import "CWBarChartOptions.h"
 
 @implementation CWBarChartOptions
+@dynamic scaleBeginAtZero;
 - (instancetype) init {
 	return [super init];
 }

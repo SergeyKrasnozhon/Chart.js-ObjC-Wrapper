@@ -9,6 +9,7 @@
 #import "CWPieChartOptions.h"
 
 @implementation CWPieChartOptions
+@dynamic animationSteps, animationEasing;
 - (instancetype) init {
 	self = [super init];
 	return self;
