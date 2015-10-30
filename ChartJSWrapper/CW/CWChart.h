@@ -18,6 +18,7 @@
 - (instancetype) initWithWebView:(CWWebView*)webview name:(NSString*)name width:(NSInteger)w height:(NSInteger)h;
 - (void) addChart;
 - (void) update;
+- (void) setBackgroundColor:(CWColor*)color;
 - (void) removeChart;
 - (void) callJavaScriptMethod:(NSString*)method withArguments:(NSArray*)args;
 

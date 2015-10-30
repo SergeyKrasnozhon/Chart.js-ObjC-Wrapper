@@ -50,6 +50,19 @@ function updateChart(chartId) {
 	return 'OK'
 }
 
+function setChartBackgroundColor(chartId, color) {
+    var chart = window[chartId];
+    chart.clear = function(){
+        this.chart.ctx.clearRect(0,0,this.chart.width,this.chart.height);
+        this.chart.ctx.rect(0,0,this.chart.width,this.chart.height);
+        this.chart.ctx.fillStyle=color;
+        this.chart.ctx.fill();
+        return this;
+    }
+    chart.update();
+    return 'OK'
+}
+
 function deleteChart(chartId) {
 	var chart = window[chartId];
 	chart.destroy();

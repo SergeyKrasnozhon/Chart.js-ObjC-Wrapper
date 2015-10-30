@@ -7,6 +7,7 @@
 //
 
 #import "CWChart.h"
+#import "CWColors.h"
 @interface CWChart ()
 #if TARGET_OS_IPHONE
 #else
@@ -65,6 +66,11 @@
 - (void) update {
 	NSArray* params = @[self.name];
 	[self callJavaScriptMethod:@"updateChart" withArguments:params];
+}
+
+- (void) setBackgroundColor:(CWColor*)color {
+    NSArray* params = @[self.name, [color toJsonColor]];
+    [self callJavaScriptMethod:@"setChartBackgroundColor" withArguments:params];
 }
 
 - (void) removeChart {
