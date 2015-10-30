@@ -27,9 +27,9 @@ static CWBoolean* no = nil;
 
 - (id) asJSONObject {
 	if(val) {
-		return @"true";
+		return @(true);
 	} else {
-		return @"false";
+		return @(false);
 	}
 }
 
