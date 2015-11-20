@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5D343EA1BFF294400F5F5CF /* CWColor+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D343E91BFF294400F5F5CF /* CWColor+Parser.m */; settings = {ASSET_TAGS = (); }; };
+		A5D343EB1BFF2AAA00F5F5CF /* CWColor+Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D343E91BFF294400F5F5CF /* CWColor+Parser.m */; settings = {ASSET_TAGS = (); }; };
 		B33CF1921ABC263600CA33B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B33CF1911ABC263600CA33B7 /* AppDelegate.m */; };
 		B33CF1941ABC263600CA33B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B33CF1931ABC263600CA33B7 /* main.m */; };
 		B33CF1961ABC263600CA33B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33CF1951ABC263600CA33B7 /* Images.xcassets */; };
@@ -85,6 +87,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5D343E81BFF294400F5F5CF /* CWColor+Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CWColor+Parser.h"; path = "CW/CWColor+Parser.h"; sourceTree = SOURCE_ROOT; };
+		A5D343E91BFF294400F5F5CF /* CWColor+Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CWColor+Parser.m"; path = "CW/CWColor+Parser.m"; sourceTree = SOURCE_ROOT; };
 		B33CF18B1ABC263600CA33B7 /* ChartJSWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartJSWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33CF18F1ABC263600CA33B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33CF1901ABC263600CA33B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -242,6 +246,8 @@
 		B33CF1BB1ABC9F3A00CA33B7 /* CW */ = {
 			isa = PBXGroup;
 			children = (
+				A5D343E81BFF294400F5F5CF /* CWColor+Parser.h */,
+				A5D343E91BFF294400F5F5CF /* CWColor+Parser.m */,
 				B33CF28F1AC19D3700CA33B7 /* CW.h */,
 				B33CF2901AC19D3700CA33B7 /* CWTypes.h */,
 				B33CF1F91ABDF61F00CA33B7 /* Core */,
@@ -541,6 +547,7 @@
 				B33CF2C31AC19DE500CA33B7 /* CWLineChartOptions.m in Sources */,
 				B33CF2A31AC19D8E00CA33B7 /* CWColors.m in Sources */,
 				B33CF2A11AC19D8E00CA33B7 /* CWChart.m in Sources */,
+				A5D343EA1BFF294400F5F5CF /* CWColor+Parser.m in Sources */,
 				B33CF2CF1AC19E0100CA33B7 /* CWRadarChartOptions.m in Sources */,
 				B33CF2DB1AC19E1B00CA33B7 /* CWBarChartData.m in Sources */,
 				B33CF1941ABC263600CA33B7 /* main.m in Sources */,
@@ -561,6 +568,7 @@
 			files = (
 				B33CF2E61AC19E3B00CA33B7 /* CWPolarAreaChart.m in Sources */,
 				B33CF2AA1AC19D8E00CA33B7 /* CWObject.m in Sources */,
+				A5D343EB1BFF2AAA00F5F5CF /* CWColor+Parser.m in Sources */,
 				B33CF2F01AC19E6200CA33B7 /* CWDoughnutChart.m in Sources */,
 				B33CF2B81AC19DBF00CA33B7 /* CWPointDataSet.m in Sources */,
 				B33CF2A21AC19D8E00CA33B7 /* CWChart.m in Sources */,
