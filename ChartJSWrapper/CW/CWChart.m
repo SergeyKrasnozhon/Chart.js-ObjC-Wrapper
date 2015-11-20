@@ -32,34 +32,38 @@
 }
 
 - (void) callJavaScriptMethod:(NSString*)method withArguments:(NSArray*)args {
-#if TARGET_OS_IPHONE
-	NSString* js = [NSString stringWithFormat:@"%@(",method];
-	if(args) {
-		NSString* params = @"";
-		for(NSUInteger i = 0; i < args.count;i++) {
-			if(i > 0) {
-				params = [params stringByAppendingString:@","];
-			}
-			NSObject* o = args[i];
-			params = [params stringByAppendingString:[NSString stringWithFormat:@"'%@'",o.description]];
-		}
-		js = [js stringByAppendingString:params];
-	}
-	js = [js stringByAppendingString:@")"];
-//	NSLog(@"JS to call: %@",js);
+    [CWChart callJavaScriptMethod:method withArguments:args onWebView:self.webview];
+}
 
-	[self.webview evaluateJavaScript:js completionHandler:^(id res, NSError *err) {
-		if(err) {
-			NSLog(@"Calling %@ results ERROR: %@",method, err.localizedDescription);
-		} else {
-			NSLog(@"Calling %@ results: %@",method, res);
-		}
-	}];
-	return;
++(void) callJavaScriptMethod:(NSString*)method withArguments:(NSArray*)args onWebView:(CWWebView*)webView{
+#if TARGET_OS_IPHONE
+    NSString* js = [NSString stringWithFormat:@"%@(",method];
+    if(args) {
+        NSString* params = @"";
+        for(NSUInteger i = 0; i < args.count;i++) {
+            if(i > 0) {
+                params = [params stringByAppendingString:@","];
+            }
+            NSObject* o = args[i];
+            params = [params stringByAppendingString:[NSString stringWithFormat:@"'%@'",o.description]];
+        }
+        js = [js stringByAppendingString:params];
+    }
+    js = [js stringByAppendingString:@")"];
+    //	NSLog(@"JS to call: %@",js);
+    
+    [webView evaluateJavaScript:js completionHandler:^(id res, NSError *err) {
+        if(err) {
+            NSLog(@"Calling %@ results ERROR: %@",method, err.localizedDescription);
+        } else {
+            NSLog(@"Calling %@ results: %@",method, res);
+        }
+    }];
+    return;
 #else
-	id res = [self.win callWebScriptMethod:method withArguments:args];
-	NSLog(@"Calling %@ results: %@",method, res);
-	return;
+    id res = [self.win callWebScriptMethod:method withArguments:args];
+    NSLog(@"Calling %@ results: %@",method, res);
+    return;
 #endif
 }
 

@@ -21,5 +21,5 @@
 - (void) setBackgroundColor:(CWColor*)color;
 - (void) removeChart;
 - (void) callJavaScriptMethod:(NSString*)method withArguments:(NSArray*)args;
-
++ (void) callJavaScriptMethod:(NSString*)method withArguments:(NSArray*)args onWebView:(CWWebView*)webView;
 @end
