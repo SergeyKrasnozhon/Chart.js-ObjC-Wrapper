@@ -81,6 +81,9 @@ function createContext(chartId, chartWidth,chartHeight) {
 	div.id = chartId+'_div';
 	div.style.height='100%';
 	div.style.width='100%';
+    div.style.position = 'fixed';
+    div.style.top = '0px';
+    div.style.left = '0px';
 	var canvas = document.createElement('canvas');
 	div.appendChild(canvas);
 	canvas.id = chartId+'_canvas';

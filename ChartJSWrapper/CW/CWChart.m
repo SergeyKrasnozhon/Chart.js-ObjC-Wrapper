@@ -76,7 +76,7 @@
     NSString *colorString = [color toJsonColor];
     NSArray* params = @[self.name, colorString];
     [self callJavaScriptMethod:@"setChartBackgroundColor" withArguments:params];
-    [self callJavaScriptMethod:@"setBackgroundColor" withArguments:@[colorString]];
+//    [self callJavaScriptMethod:@"setBackgroundColor" withArguments:@[colorString]];
 }
 
 - (void) removeChart {

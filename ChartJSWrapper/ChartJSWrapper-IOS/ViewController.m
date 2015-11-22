@@ -35,6 +35,7 @@
 	WKWebView* webview = [[WKWebView alloc] initWithFrame:self.wview.bounds];
 	[webview setTranslatesAutoresizingMaskIntoConstraints:NO];
 	[self.wview addSubview:webview];
+    self.webview.backgroundColor = [UIColor greenColor];
 	
 	NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(webview);
 	[self.wview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[webview]|" options:0 metrics:nil views:viewsDictionary]];
@@ -151,6 +152,7 @@
 	CWLineChartData* lcd = [[CWLineChartData alloc] initWithLabels:labels andDataSet:datasets];
 	self.lineChart = [[CWLineChart alloc] initWithWebView:self.webview name:@"LineChart1" width:300 height:200 data:lcd options:nil];
 	[self.lineChart addChart];
+    [self.lineChart setBackgroundColor:[UIColor darkGrayColor]];
 }
 
 - (void)delAddLine {
