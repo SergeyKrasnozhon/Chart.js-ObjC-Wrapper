@@ -31,6 +31,8 @@
 	return self;
 }
 
+BOOL _debugLogEnabled = NO;
+
 - (void) callJavaScriptMethod:(NSString*)method withArguments:(NSArray*)args {
     [CWChart callJavaScriptMethod:method withArguments:args onWebView:self.webview];
 }
@@ -54,9 +56,9 @@
     
     [webView evaluateJavaScript:js completionHandler:^(id res, NSError *err) {
         if(err) {
-            NSLog(@"Calling %@ results ERROR: %@",method, err.localizedDescription);
+            if(_debugLogEnabled) NSLog(@"Calling %@ results ERROR: %@",method, err.localizedDescription);
         } else {
-            NSLog(@"Calling %@ results: %@",method, res);
+            if(_debugLogEnabled) NSLog(@"Calling %@ results: %@",method, res);
         }
     }];
     return;
