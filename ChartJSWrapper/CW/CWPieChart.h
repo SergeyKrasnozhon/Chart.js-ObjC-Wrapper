@@ -10,7 +10,7 @@
 #import "CWPieChartOptions.h"
 @interface CWPieChart : CWPolarAreaChart
 @property (nonatomic, strong, readonly) CWPieChartOptions* options;
-@property (nonatomic, strong,readonly) NSArray* data;
+@property (nonatomic, strong) NSArray* data;
 - (instancetype) initWithWebView:(CWWebView*)webview name:(NSString*)name width:(NSInteger)w height:(NSInteger)h data:(NSArray*)data options:(CWPieChartOptions*) options;
 //- (void) setValue:(NSNumber*)val inSegment:(NSInteger)segment;
 @end
