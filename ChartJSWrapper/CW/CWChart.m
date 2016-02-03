@@ -75,7 +75,9 @@ BOOL _debugLogEnabled = NO;
 }
 
 - (void) setBackgroundColor:(CWColor*)color {
+    if(!color) return;
     NSString *colorString = [color toJsonColor];
+    if(colorString.length == 0) return;
     NSArray* params = @[self.name, colorString];
     [self callJavaScriptMethod:@"setChartBackgroundColor" withArguments:params];
 //    [self callJavaScriptMethod:@"setBackgroundColor" withArguments:@[colorString]];
